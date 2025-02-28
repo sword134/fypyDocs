@@ -10,6 +10,9 @@ import os
 import sys
 sys.path.insert(0, os.path.abspath('../../fypy/'))
 
+utodoc_member_order = 'bysource'
+autoclass_content = 'both'
+
 project = 'FyPy'
 copyright = '2025, TC'
 author = 'TC'
@@ -18,7 +21,11 @@ release = '0.1'
 # -- General configuration ---------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#general-configuration
 
-extensions = []
+extensions = [
+    'sphinx.ext.autodoc',
+    'sphinx.ext.viewcode',  # Optional but nice for linking to source code
+    'sphinx.ext.napoleon',  # Optional for Google/NumPy style docstrings
+]
 
 templates_path = ['_templates']
 exclude_patterns = []
